@@ -1,5 +1,10 @@
 import time
 start_time = time.time() #start counting time
+n = int(input())
+data = list(map(int, input().split()))
+
+data.sort(reverse=True)
+print(data)
 
 end_time = time.time() #end counting time
 
