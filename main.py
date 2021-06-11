@@ -1,11 +1,17 @@
-import time
-start_time = time.time() #start counting time
-n = int(input())
-data = list(map(int, input().split()))
+from itertools import combinations
 
-data.sort(reverse=True)
-print(data)
+def isPrime(a,b,c):
+    sum = a+b+c
+    for i in range(2,sum):
+        if sum%i == 0: return False
+    return True
 
-end_time = time.time() #end counting time
+def solution (nums):
+    answer = 0
+    cmb = list(combinations(nums, 3))
+    for i in cmb:
+        if isPrime(i[0],i[1],i[2]):
+            answer += 1
+    return answer
 
-print("time:", end_time - start_time) #print the time taken
+print(solution([1,2,7,6,4]))
