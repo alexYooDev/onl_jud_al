@@ -1,23 +1,25 @@
+def get_divisor(n):
+  n = int(n)
+  divisors = []
 
-def convert(num, base):
-  T = "0123456789ABCDEF"
-  q,r = divmod(num,base)
-  if q == 0:
-    return T[r]
-  else:
-    return convert(q,base)+T[r]
+  for i in range(1, n+1):
+    if(n%i == 0):
+      divisors.append(i)
+  return divisors
 
-def div(word):
-  return [char for char in word]
-
-def solution(n):
+def solution(left, right):
     answer = 0
-    stk = []
-    three = []
-    result = convert(n, 3)
-    stk = div(str(result))
-    for i in range(0,len(stk)):
-        three += stk.pop()
-    temp = ''.join(three)
-    answer = int(temp, base=3)
+    lists = []
+    arr = []
+    for i in range(left, right+1):
+      lists.append(i)
+
+    for i in lists:
+      arr.append(get_divisor(i))
+    for list in arr:
+      if len(list) % 2 == 0:
+        answer += list[len(list)-1]
+      else:
+        answer -= list[len(list)-1]
+
     return answer
