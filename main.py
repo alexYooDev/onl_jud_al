@@ -1,2 +1,3 @@
-def solution(n):
-  return ('수박'*n)[:n]
+def solution(phone_number):
+    answer = str("*"*(len(phone_number)-4)+phone_number[-4:])
+    return answer
