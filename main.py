@@ -1,10 +1,14 @@
-def solution(absolutes, signs):
-    answer=0
-    for absolute,sign in zip(absolutes,signs):
-        if sign:
-            answer+=absolute
-        else:
-            answer-=absolute
+from itertools import combinations
+
+def solution(numbers):
+    answer = []
+    temp = []
+    cmb = list(set(combinations(numbers, 2)))
+    for cb in cmb:
+        temp += [sum(cb)]
+        answer = list(set(temp))
+        answer.sort()
+               
     return answer
 
-print(solution([4,7,12],[True,False,True]))
+print(solution([2,1,3,4,1]))
