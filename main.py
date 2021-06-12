@@ -1,3 +1,5 @@
-def solution(phone_number):
-    answer = str("*"*(len(phone_number)-4)+phone_number[-4:])
+def solution(n):
+    arr = list(str(n))
+    arr.sort(reverse=True)
+    answer = int("".join(arr))
     return answer
