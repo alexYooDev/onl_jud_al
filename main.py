@@ -1,14 +1,6 @@
-from itertools import combinations
+def solution(a, b):
 
-def solution(numbers):
-    answer = []
-    temp = []
-    cmb = list(set(combinations(numbers, 2)))
-    for cb in cmb:
-        temp += [sum(cb)]
-        answer = list(set(temp))
-        answer.sort()
-               
+    answer = sum([n1*n2 for n1,n2 in zip(a,b)])
     return answer
 
-print(solution([2,1,3,4,1]))
+print(solution([1,2,3,4],[-3,-1,0,2]))
