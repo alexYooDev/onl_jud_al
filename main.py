@@ -1,17 +1,10 @@
-from itertools import combinations
-
-def isPrime(a,b,c):
-    sum = a+b+c
-    for i in range(2,sum):
-        if sum%i == 0: return False
-    return True
-
-def solution (nums):
-    answer = 0
-    cmb = list(combinations(nums, 3))
-    for i in cmb:
-        if isPrime(i[0],i[1],i[2]):
-            answer += 1
+def solution(absolutes, signs):
+    answer=0
+    for absolute,sign in zip(absolutes,signs):
+        if sign:
+            answer+=absolute
+        else:
+            answer-=absolute
     return answer
 
-print(solution([1,2,7,6,4]))
+print(solution([4,7,12],[True,False,True]))
