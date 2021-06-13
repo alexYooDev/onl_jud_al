@@ -1,3 +1,12 @@
-def solution(seoul):
+import re
+
+def solution(s):
+    answer = False
+    if len(s) == 4 or len(s) == 6:
+        answer = True
+
+    if re.findall('[a-z]+', s):
+        answer = False
     
-    return "김서방은 %d에 있다" %{seoul[i]:i for i in range(0, len(seoul))}["Kim"]
+    return answer
+print(solution("123456"))
