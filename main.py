@@ -1,9 +1,5 @@
-def solution(n):
-    answer = 0
-    add = []
-    for i in range(1, n+1):
-        if n%i == 0:
-            add.append(i)
-    answer = sum(add)
-
-    return answer
+def solution(x):
+    
+    h = sum(list(map(int, str(x))))
+        
+    return True if x%h == 0 else False
