@@ -1,11 +1,7 @@
-def solution(arr, divisor):
-    answer = []
-    arr.sort()
-    
-    for i in arr:
-        if i % divisor == 0:
-            answer.append(i)
-    if len(answer) == 0:
-        answer = [-1]
-            
-    return answer
+def next_bin(n):
+  cnt = bin(n).count('1')
+  for i in range(n+1, 1000001):
+    if bin(i).count('1') == cnt:
+      return i
+
+print(next_bin(78))
