@@ -1,5 +1,3 @@
-def solution(x):
+def solution(seoul):
     
-    h = sum(list(map(int, str(x))))
-        
-    return True if x%h == 0 else False
+    return "김서방은 %d에 있다" %{seoul[i]:i for i in range(0, len(seoul))}["Kim"]
