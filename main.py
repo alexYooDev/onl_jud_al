@@ -5,15 +5,15 @@ def search_median (arr):
     arr.sort()
     length = len(arr)-1
 
-    x = int(length/2)+1
-    print(arr)
+    x = arr[int(length/2)]
+    y = arr[int(length/2)+1]
 
     if length % 2 == 0:  
-
       answer = x
+      
     else:   
-      answer = (x+(x+1))/2
-    
+      answer = (x+y)/2
+      
     return answer
-
-search_median([1,4,5,6,47,2,3,11,30,7,8,9])
+  
+search_median([1,4,20,6,20,47,2,11,30,7,8,10,26])
