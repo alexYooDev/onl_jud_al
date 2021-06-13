@@ -1,9 +1,14 @@
-def solution(n):
+import collections
 
-    bin = sum(list(map(int, str(format(n, 'b')))))
+def solution(arr):
+  answer = 0
+  cnt = []
+  for i in arr:
+    if arr.count(i) >= 2:
+      cnt.append(i)
+  answer = list(collections.Counter(cnt).values())
+  if len(cnt) == 0: answer = -1
+  print(answer)
+  return answer
 
-    for next_bin in range(n+1,1000000):
-        if sum(list(map(int, str(format(next_bin, 'b'))))) == bin:
-            break
-
-    return next_bin
+solution([5,5,5,5,1])
