@@ -1,7 +1,9 @@
-def next_bin(n):
-  cnt = bin(n).count('1')
-  for i in range(n+1, 1000001):
-    if bin(i).count('1') == cnt:
-      return i
+def solution(n):
 
-print(next_bin(78))
+    bin = sum(list(map(int, str(format(n, 'b')))))
+
+    for next_bin in range(n+1,1000000):
+        if sum(list(map(int, str(format(next_bin, 'b'))))) == bin:
+            break
+
+    return next_bin
