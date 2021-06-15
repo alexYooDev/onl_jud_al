@@ -1,6 +1,8 @@
-import collections
-
 def solution(participant, completion):
-    answer = collections.Counter(participant) - collections.Counter(completion)
-    print(list(answer.keys())[0])
-solution(["mislav", "stanko", "mislav", "ana"],["stanko", "ana", "mislav"])
+    participant.sort()
+    completion.sort()
+    for p,c in zip(participant,completion):
+        if p != c:
+            return p
+    
+    return participant[-1]
