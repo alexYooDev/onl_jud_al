@@ -1,6 +1,10 @@
-str = input()
+from collections import Counter
 
-chunks = [str[i:i+10] for i in range(0, len(str), 10)]
+def solution(arr):
 
-for i in chunks:
-  print(i)
+  result = Counter(arr)
+
+  return result
+
+
+print(solution([1,2,3,3,3,3,4,4]))
