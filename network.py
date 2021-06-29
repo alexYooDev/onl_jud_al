@@ -17,7 +17,7 @@ def solution(n, computers):
 
 # 깊이 우선 탐색을 할 함수 생성
 def dfs(n, computers, v, connected):
-    # 첫번째 노드가 방문되었다면
+    # 첫번째 노드를 방문
     connected[v] = True
     # 0~n-1 까지 범위의 c
     for c in range(n):
